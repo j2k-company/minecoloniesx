@@ -15,6 +15,9 @@ repositories {
         name "Dynmap"
         url = "https://repo.mikeprimm.com/"
     }
+    flatDir {
+        dirs './libs'
+    }
 }
 
 dependencies {
@@ -32,6 +35,13 @@ dependencies {
         transitive = false
     }
     implementation (fg.deobf("com.ldtteam:blockui:${project.blockUI_version}")){
+        transitive = false
+    }
+
+    apiImplementation (fg.deobf("com.cabaletta:baritone-api:${project.baritone_version}")){
+        transitive = false
+    }
+    implementation (fg.deobf("com.cabaletta:baritone-api:${project.baritone_version}")){
         transitive = false
     }
 
